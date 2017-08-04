@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
