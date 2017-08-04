@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#939393"
+    android:background="@color/colorPrimary"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="20dp"
@@ -13,19 +13,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="bottom"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="250dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/laz_logo" />
+            android:src="@mipmap/ic_launcher" />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="5dp"
             app:cardElevation="15dp">
 
@@ -41,11 +40,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
                     android:text="Sign In" />
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -54,7 +56,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -69,16 +71,34 @@
                     android:drawableEnd="@android:drawable/ic_lock_idle_lock"
                     android:layout_marginBottom="10dp"
                     android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
                     android:textAllCaps="false"
                     android:text="Next"
                     android:textStyle="bold"
                     android:textColor="#FFF"
                     android:textAlignment="textStart" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dont have an account? Sign Up" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#111111"
+                        android:text="Dont have an account?  " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:text="Sign Up" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

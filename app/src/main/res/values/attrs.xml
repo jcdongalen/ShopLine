@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextFont">
+        <attr name="setFont">
+            <enum name="black_chancery" value="0" />
+            <enum name="caviar_dreams_bold" value="1" />
+            <enum name="caviar_dreams_bold_italic" value="2" />
+            <enum name="caviar_dreams_italic" value="3" />
+            <enum name="caviar_dreams_regular" value="4" />
+            <enum name="comfortaa_bold" value="5" />
+            <enum name="comfortaa_light" value="6" />
+            <enum name="comfortaa_regular" value="7" />
+            <enum name="fragmentcore" value="8" />
+            <enum name="grutch_shaded" value="9" />
+            <enum name="roman_sd" value="10" />
+        </attr>
+    </declare-styleable>
+</resources>

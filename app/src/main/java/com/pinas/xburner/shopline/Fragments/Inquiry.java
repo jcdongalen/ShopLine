@@ -2,6 +2,8 @@ package com.pinas.xburner.shopline.Fragments;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +14,10 @@ import com.pinas.xburner.shopline.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Inquiry extends Fragment {
+public class Inquiry extends Fragment implements View.OnClickListener{
 
+    FloatingActionButton fabInquiry;
+    View rootView;
 
     public Inquiry() {
         // Required empty public constructor
@@ -24,7 +28,27 @@ public class Inquiry extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inquiry, container, false);
+        rootView = inflater.inflate(R.layout.fragment_inquiry, container, false);
+
+        fabInquiry = (FloatingActionButton)rootView.findViewById(R.id.fabInquiry);
+        fabInquiry.setOnClickListener(this);
+
+        return rootView;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fabInquiry:
+                Snackbar snackbar = Snackbar.make(rootView, "Do you want to add inquiry?", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Yup", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Do Nothing
+                    }
+                });
+                snackbar.show();
+                break;
+        }
+    }
 }
