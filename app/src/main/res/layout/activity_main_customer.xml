@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pinas.xburner.shopline.Activity.MainActivityCustomer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            style="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnDrawer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                app:srcCompat="@drawable/ic_menu_24dp"
+                android:clickable="true"
+                android:tint="#FFFFFF"/>
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="S H O P L I N E"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <ImageButton
+                android:id="@+id/btnCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                app:srcCompat="@drawable/ic_cart_24dp"
+                android:tint="#FFFFFF"/>
+
+            <ImageButton
+                android:id="@+id/btnMore"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                app:srcCompat="@drawable/ic_more_vert_24dp"
+                android:tint="#FFFFFF"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginEnd="20dp">
+
+                <com.pinas.xburner.shopline.Custom.mEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_search_24dp"
+                    android:hint="Search"
+                    app:setFont="caviar_dreams_regular"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:tabTextColor="#FFFFFF"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabMode="scrollable" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@android:color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/leftDrawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true" />
+
+    <LinearLayout
+        android:id="@+id/rightDrawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true" />
+
+</android.support.v4.widget.DrawerLayout>
