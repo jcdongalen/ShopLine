@@ -72,7 +72,8 @@
 
                 <com.pinas.xburner.shopline.Custom.mEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
+                    android:textSize="12sp"
                     android:padding="10dp"
                     android:background="@null"
                     android:drawableStart="@drawable/ic_search_24dp"

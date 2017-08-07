@@ -1,0 +1,325 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.pinas.xburner.shopline.Fragments.HighlightsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="Style Factory"
+                android:textSize="25sp"
+                app:setFont="caviar_dreams_bold_italic" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="Kids Section"
+                android:textSize="25sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pinas.xburner.shopline.Custom.mTextView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="Men"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    app:setFont="caviar_dreams_bold" />
+
+                <com.pinas.xburner.shopline.Custom.mTextView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="Women"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    app:setFont="caviar_dreams_bold" />
+
+            </LinearLayout>
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="VOUCHER: LESS 250"
+                android:textSize="25sp"
+                app:setFont="caviar_dreams_bold_italic" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:text="Coupons"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                app:setFont="caviar_dreams_bold_italic"/>
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:textSize="25sp"
+                android:textColor="#FFF"
+                android:gravity="center_vertical|start"
+                android:text="SHOP\nNOW"
+                android:paddingStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                app:setFont="caviar_dreams_bold_italic"/>
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trending today!"
+                android:textColor="#111"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="5dp"
+                app:setFont="caviar_dreams_bold"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="3dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_launcher"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#Singles"
+                            android:textColor="#FFF"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="3dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_launcher_round"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#Doubles"
+                            android:textColor="#FFF"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="3dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_shipment_1"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#Kids"
+                            android:textColor="#FFF"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="3dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_completed"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#Tech"
+                            android:textColor="#FFF"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="3dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_inquiry_1"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#HELP"
+                            android:textColor="#FFF"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_bold"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:src="@mipmap/ic_launcher_round"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cash on Delivery"
+                            android:textColor="#111"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_regular"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:src="@mipmap/ic_launcher"
+                            android:padding="10dp"
+                            android:layout_weight="1"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trusted Seller"
+                            android:textColor="#111"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_regular"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:src="@mipmap/ic_inquiry_1"
+                            android:padding="10dp"
+                            android:layout_weight="1"/>
+
+                        <com.pinas.xburner.shopline.Custom.mTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Buyer Protection"
+                            android:textColor="#111"
+                            android:gravity="center"
+                            app:setFont="caviar_dreams_regular"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

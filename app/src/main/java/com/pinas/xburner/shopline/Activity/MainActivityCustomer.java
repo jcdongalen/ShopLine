@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.pinas.xburner.shopline.Custom.mTextView;
 import com.pinas.xburner.shopline.Fragments.Completed;
+import com.pinas.xburner.shopline.Fragments.HighlightsFragment;
 import com.pinas.xburner.shopline.Fragments.Inquiry;
 import com.pinas.xburner.shopline.Fragments.Shipping;
 import com.pinas.xburner.shopline.Fragments.ToShip;
@@ -93,13 +94,13 @@ public class MainActivityCustomer extends AppCompatActivity implements View.OnCl
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Inquiry(), "Inquiry");
+        adapter.addFragment(new HighlightsFragment(), "Highlights");
         adapter.addFragment(new ToShip(), "To Ship");
         adapter.addFragment(new Shipping(), "Shipping");
         adapter.addFragment(new Completed(), "Completed");
         adapter.addFragment(new Completed(), "Completed");
-        adapter.addFragment(new Completed(), "Completed");
-        adapter.addFragment(new Completed(), "Completed");
+        adapter.addFragment(new HighlightsFragment(), "Highlights");
+        adapter.addFragment(new HighlightsFragment(), "Highlights");
         viewPager.setAdapter(adapter);
     }
 
