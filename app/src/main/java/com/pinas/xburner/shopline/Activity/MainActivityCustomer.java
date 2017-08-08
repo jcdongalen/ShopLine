@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pinas.xburner.shopline.Custom.mTextView;
+import com.pinas.xburner.shopline.Fragments.AllItems;
 import com.pinas.xburner.shopline.Fragments.Completed;
 import com.pinas.xburner.shopline.Fragments.HighlightsFragment;
 import com.pinas.xburner.shopline.Fragments.Inquiry;
@@ -38,13 +39,7 @@ public class MainActivityCustomer extends AppCompatActivity implements View.OnCl
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private int[] tabIcons = {
-            R.mipmap.ic_inquiry_1,
-            R.mipmap.ic_shipment_1,
-            R.mipmap.ic_shipped_1,
-            R.mipmap.ic_completed
-    };
-    private String[] tabNames = {"On Sale", "Hot", "Trending", "Brands", "Outdoor", "Sports", "Kids"};
+    private String[] tabNames = {"Highlights", "All Items", "Trending", "Brands", "Outdoor", "Sports", "Kids"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +58,7 @@ public class MainActivityCustomer extends AppCompatActivity implements View.OnCl
 
         btnDrawer.setOnClickListener(this);
         btnCart.setOnClickListener(this);
+        btnMore.setOnClickListener(this);
 
         leftDrawer = (LinearLayout) findViewById(R.id.leftDrawer);
         rightDrawer = (LinearLayout) findViewById(R.id.rightDrawer);
@@ -74,7 +70,6 @@ public class MainActivityCustomer extends AppCompatActivity implements View.OnCl
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-//        setupTabIcons();
     }
 
     @Override
@@ -95,20 +90,13 @@ public class MainActivityCustomer extends AppCompatActivity implements View.OnCl
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new HighlightsFragment(), "Highlights");
-        adapter.addFragment(new ToShip(), "To Ship");
+        adapter.addFragment(new AllItems(), "All Items");
         adapter.addFragment(new Shipping(), "Shipping");
         adapter.addFragment(new Completed(), "Completed");
         adapter.addFragment(new Completed(), "Completed");
         adapter.addFragment(new HighlightsFragment(), "Highlights");
         adapter.addFragment(new HighlightsFragment(), "Highlights");
         viewPager.setAdapter(adapter);
-    }
-
-    private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
