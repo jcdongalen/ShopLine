@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.pinas.xburner.shopline.R;
 
@@ -18,6 +19,7 @@ public class Inquiry extends Fragment implements View.OnClickListener{
 
     FloatingActionButton fabInquiry;
     View rootView;
+    ListView lvInquiry;
 
     public Inquiry() {
         // Required empty public constructor
@@ -30,10 +32,16 @@ public class Inquiry extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_inquiry, container, false);
 
+        initialization();
+
+        return rootView;
+    }
+
+    public void initialization(){
         fabInquiry = (FloatingActionButton)rootView.findViewById(R.id.fabInquiry);
         fabInquiry.setOnClickListener(this);
 
-        return rootView;
+        lvInquiry = (ListView)rootView.findViewById(R.id.lvInquiry);
     }
 
     @Override

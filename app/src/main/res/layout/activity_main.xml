@@ -7,86 +7,138 @@
     android:orientation="vertical"
     tools:context="com.pinas.xburner.shopline.Activity.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:gravity="center_vertical"
+                style="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <ImageButton
+                    android:id="@+id/btnDrawer"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_menu_24dp"
+                    android:clickable="true"
+                    android:tint="#FFFFFF"/>
+
+                <com.pinas.xburner.shopline.Custom.mTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:text="S H O P L I N E"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    app:setFont="caviar_dreams_bold" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@mipmap/ic_launcher_round" />
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_sort_by_24dp"
+                    android:tint="#FFFFFF"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvPInfoDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:text="September 22, 2016"
-                        android:textColor="@android:color/white"
-                        android:textSize="10sp" />
-
-                    <DigitalClock
-                        android:id="@+id/fragment_clock_digital"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:textColor="@android:color/white"
-                        android:textSize="10sp" />
-                </LinearLayout>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_more_vert_24dp"
+                    android:tint="#FFFFFF"/>
 
             </LinearLayout>
 
-        </android.support.v7.widget.Toolbar>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:tabMode="fixed" />
 
-    </android.support.design.widget.AppBarLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@android:color/white" />
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:tabMode="fixed" />
+        </LinearLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:background="@android:color/white" />
+        <LinearLayout
+            android:id="@+id/leftDrawer"
+            android:layout_width="240dp"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:background="#F0F0F0"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher_round"/>
+
+                <com.pinas.xburner.shopline.Custom.mTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Administrator"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    app:setFont="caviar_dreams_bold"/>
+
+            </LinearLayout>
+
+            <com.pinas.xburner.shopline.Custom.mButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Add Product"
+                android:layout_marginTop="10dp"
+                style="@style/Drawer_mButton"/>
+
+            <com.pinas.xburner.shopline.Custom.mButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Add Customer"
+                android:layout_marginTop="10dp"
+                style="@style/Drawer_mButton"/>
+
+            <com.pinas.xburner.shopline.Custom.mButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Generate Reports"
+                android:layout_marginTop="10dp"
+                style="@style/Drawer_mButton"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rightDrawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            android:fitsSystemWindows="true" />
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>
