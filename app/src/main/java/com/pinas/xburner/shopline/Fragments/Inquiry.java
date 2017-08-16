@@ -1,6 +1,7 @@
 package com.pinas.xburner.shopline.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.pinas.xburner.shopline.Activity.AddInquiry;
 import com.pinas.xburner.shopline.R;
 
 /**
@@ -20,6 +24,7 @@ public class Inquiry extends Fragment implements View.OnClickListener{
     FloatingActionButton fabInquiry;
     View rootView;
     ListView lvInquiry;
+    private DatabaseReference mDatabase;
 
     public Inquiry() {
         // Required empty public constructor
@@ -42,6 +47,8 @@ public class Inquiry extends Fragment implements View.OnClickListener{
         fabInquiry.setOnClickListener(this);
 
         lvInquiry = (ListView)rootView.findViewById(R.id.lvInquiry);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
     }
 
     @Override
@@ -52,7 +59,7 @@ public class Inquiry extends Fragment implements View.OnClickListener{
                 snackbar.setAction("Yup", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Do Nothing
+                        startActivity(new Intent(getActivity(), AddInquiry.class));
                     }
                 });
                 snackbar.show();

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.pinas.xburner.shopline.Activity.AddInquiry">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <com.pinas.xburner.shopline.Custom.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order ID:"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mEditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Order ID"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Full Name:"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mEditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="John Carlos G. Dongalen"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Office/Home Address::"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mEditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="4th Floor CIBI Information Center, Zapote corner Mascardo, Makati City, NCR, 1205"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Mode of Payment:"
+            app:setFont="caviar_dreams_bold"/>
+
+        <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+            android:id="@+id/mAutoCompletePaymentMode"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="COD or Regular Shipment"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:setFont="caviar_dreams_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="4">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Product 1"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Count"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="4">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Product 1"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Count"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="4">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Product 1"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Count"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
