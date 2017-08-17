@@ -10,197 +10,254 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="15dp"
         android:orientation="vertical">
-
-        <com.pinas.xburner.shopline.Custom.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Order ID:"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mEditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="Order ID"
-            android:singleLine="true"
-            android:maxLines="1"
-            android:textSize="12sp"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Full Name:"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mEditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="John Carlos G. Dongalen"
-            android:singleLine="true"
-            android:maxLines="1"
-            android:textSize="12sp"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Office/Home Address::"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mEditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="4th Floor CIBI Information Center, Zapote corner Mascardo, Makati City, NCR, 1205"
-            android:singleLine="true"
-            android:maxLines="1"
-            android:textSize="12sp"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Mode of Payment:"
-            app:setFont="caviar_dreams_bold"/>
-
-        <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
-            android:id="@+id/mAutoCompletePaymentMode"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="COD or Regular Shipment"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textSize="12sp"
-            app:setFont="caviar_dreams_bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:src="@android:drawable/ic_delete" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:text="S H O P L I N E"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center"
+                android:maxLines="2"
+                android:maxWidth="180dp"
+                android:paddingEnd="5dp"
+                android:text="₱"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center"
+                android:maxLines="2"
+                android:maxWidth="180dp"
+                android:paddingEnd="5dp"
+                android:text="999.00"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:setFont="caviar_dreams_bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order ID:"
+                android:textColor="@color/colorPrimary"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mEditText
+                android:id="@+id/etOrderID"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="Order ID"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Full Name:"
+                android:textColor="@color/colorPrimary"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mEditText
+                android:id="@+id/etFullname"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="John Carlos G. Dongalen"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Office/Home Address:"
+                android:textColor="@color/colorPrimary"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="4th Floor CIBI Information Center, Zapote corner Mascardo, Makati City, NCR, 1205"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Mode of Payment:"
+                android:textColor="@color/colorPrimary"
+                app:setFont="caviar_dreams_bold" />
+
+            <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+                android:id="@+id/mAutoCompletePaymentMode"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:completionThreshold="2"
+                android:hint="COD or Regular Shipment"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                app:setFont="caviar_dreams_bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="4">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                    <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
+                    <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+                        android:id="@+id/mACTProduct1"
+                        android:layout_width="0dp"
                         android:layout_height="45dp"
+                        android:layout_weight="4"
+                        android:completionThreshold="2"
                         android:hint="Product 1"
-                        android:singleLine="true"
                         android:maxLines="1"
+                        android:singleLine="true"
                         android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                        app:setFont="caviar_dreams_bold" />
 
                     <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
+                        android:id="@+id/etCount1"
+                        android:layout_width="0dp"
                         android:layout_height="45dp"
+                        android:layout_weight="1"
                         android:hint="Count"
-                        android:singleLine="true"
                         android:maxLines="1"
+                        android:singleLine="true"
                         android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
+                        app:setFont="caviar_dreams_bold" />
 
-                </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+                        android:id="@+id/mACTProduct2"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="4"
+                        android:completionThreshold="2"
+                        android:hint="Product 2"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold" />
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:id="@+id/etCount2"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:hint="Count"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+                        android:id="@+id/mACTProduct3"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="4"
+                        android:completionThreshold="2"
+                        android:hint="Product 3"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold" />
+
+                    <com.pinas.xburner.shopline.Custom.mEditText
+                        android:id="@+id/etCount3"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:hint="Count"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="12sp"
+                        app:setFont="caviar_dreams_bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
+            <com.pinas.xburner.shopline.Custom.mButton
+                android:id="@+id/btnPlaceOrder"
+                style="@style/mButton"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-
-                    <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:hint="Product 1"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:hint="Count"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-
-                    <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:hint="Product 1"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <com.pinas.xburner.shopline.Custom.mEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:hint="Count"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:textSize="12sp"
-                        app:setFont="caviar_dreams_bold"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Place Order"
+                android:textSize="18sp"
+                app:setFont="caviar_dreams_bold" />
 
         </LinearLayout>
 

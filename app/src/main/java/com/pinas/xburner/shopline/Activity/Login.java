@@ -62,111 +62,55 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btnLogin:
 
+                final mProgressDialog progressDialog = new mProgressDialog(Login.this);
+                progressDialog.show();
+
                 final String email = etUserName.getText().toString();
                 final String password = etPassword.getText().toString();
 
-                ValidateCredential task = new ValidateCredential();
-                task.execute(email, password);
-
-//                if(email.equalsIgnoreCase("user")){
-//                    startActivity(new Intent(Login.this, MainActivityCustomer.class));
-//                }
-//                else if(email.equalsIgnoreCase("admin")){
-//                    startActivity(new Intent(Login.this, MainActivity.class));
-//                }
-//                else{
-//                    Snackbar snackbar = Snackbar.make(getWindow().getDecorView().findViewById(android.R.id.content), "Incorrect username or password.", Snackbar.LENGTH_LONG);
-//                    snackbar.setAction("GOT IT!", new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            //Do Nothing
-//                        }
-//                    });
-//                    snackbar.show();
-//                }
+                auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressDialog.dismiss();
+                                if (!task.isSuccessful()) {
+                                    Snackbar snackbar = Snackbar.make(getWindow().getDecorView().findViewById(android.R.id.content), "Incorrect username or password.", Snackbar.LENGTH_LONG);
+                                    snackbar.setAction("Register?", new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            progressDialog.show();
+                                            auth.createUserWithEmailAndPassword(email, password)
+                                                    .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                                            progressDialog.dismiss();
+                                                            if (!task.isSuccessful()) {
+                                                                Toast.makeText(Login.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                                            } else {
+                                                                if (email.equalsIgnoreCase("admin")) {
+                                                                    startActivity(new Intent(Login.this, MainActivity.class));
+                                                                } else {
+                                                                    startActivity(new Intent(Login.this, MainActivityCustomer.class));
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                        }
+                                    });
+                                    snackbar.show();
+                                } else {
+                                    if (email.contains("user")) {
+                                        startActivity(new Intent(Login.this, MainActivityCustomer.class));
+                                    } else if (email.contains("admin")) {
+                                        startActivity(new Intent(Login.this, MainActivity.class));
+                                    }
+                                }
+                            }
+                        });
                 break;
             case R.id.tvSignUp:
                 startActivity(new Intent(Login.this, Registration.class));
                 break;
-        }
-    }
-
-    private class ValidateCredential extends AsyncTask<String, String, String> {
-
-        mProgressDialog progressDialog = new mProgressDialog(Login.this);
-        String email = "", password = "";
-        String response = "";
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog.show();
-        }
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-            super.onProgressUpdate(values);
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            email = strings[0];
-            password = strings[1];
-
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                response = "failed";
-                            } else {
-                                response = "success";
-                            }
-                        }
-                    });
-
-            return response;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            progressDialog.dismiss();
-            if(s.equalsIgnoreCase("failed")){
-                Snackbar snackbar = Snackbar.make(getWindow().getDecorView().findViewById(android.R.id.content), "Incorrect username or password.", Snackbar.LENGTH_LONG);
-                snackbar.setAction("Register?", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        auth.createUserWithEmailAndPassword(email, password)
-                                .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (!task.isSuccessful()) {
-                                            Toast.makeText(Login.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            if (email.equalsIgnoreCase("admin")) {
-                                                startActivity(new Intent(Login.this, MainActivity.class));
-                                            } else {
-                                                startActivity(new Intent(Login.this, MainActivityCustomer.class));
-                                            }
-                                        }
-                                    }
-                                });
-                    }
-                });
-                snackbar.show();
-            }
-            else if(s.equalsIgnoreCase("success")){
-                Intent intent = new Intent(Login.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
         }
     }
 }
