@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_grey_300"
+    android:background="@color/md_grey_100"
     tools:context="com.pinas.xburner.shopline.Fragments.Inquiry">
 
-    <ListView
-        android:id="@+id/lvInquiry"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvInquiry"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabInquiry"

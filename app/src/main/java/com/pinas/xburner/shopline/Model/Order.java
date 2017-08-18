@@ -9,10 +9,117 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class Order {
 
-    String OrderID, FullName, Product1, Porduct1Count, Product1Amount, Product2, Product2Count, Product2Amount,Product3, Product3Count, Product3Amount, TotalAmount, PaymentMode, ShippingAddress;
+    private String orderID;
+    private String fullName;
+    private String product1;
+    private String product1Count;
+    private String product2;
+    private String product2Count;
+    private String product3;
+    private String product3Count;
+    private String totalAmount;
+    private String paymentMode;
+    private String shippingAddress;
 
-    public Order(){
+    public Order() {
+    }
 
+    public Order(String OrderID, String FullName, String ShippingAddress, String PaymentMode, String TotalAmount, String Product1, String Product1Count) {
+        this.orderID = OrderID;
+        this.fullName = FullName;
+        this.shippingAddress = ShippingAddress;
+        this.paymentMode = PaymentMode;
+        this.totalAmount = TotalAmount;
+        this.product1 = Product1;
+        this.product1Count = Product1Count;
+    }
+
+    public String getOrderID() {
+        return this.orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getFullName() {
+        return this.fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getProduct1() {
+        return this.product1;
+    }
+
+    public void setProduct1(String product1) {
+        this.product1 = product1;
+    }
+
+    public String getProduct1Count() {
+        return this.product1Count;
+    }
+
+    public void setProduct1Count(String product1Count) {
+        this.product1Count = product1Count;
+    }
+
+    public String getProduct2() {
+        return this.product2;
+    }
+
+    public void setProduct2(String product2) {
+        this.product2 = product2;
+    }
+
+    public String getProduct2Count() {
+        return this.product2Count;
+    }
+
+    public void setProduct2Count(String product2Count) {
+        this.product2Count = product2Count;
+    }
+
+    public String getProduct3() {
+        return this.product3;
+    }
+
+    public void setProduct3(String product3) {
+        this.product3 = product3;
+    }
+
+    public String getProduct3Count() {
+        return this.product3Count;
+    }
+
+    public void setProduct3Count(String product3Count) {
+        this.product3Count = product3Count;
+    }
+
+    public String getTotalAmount() {
+        return this.totalAmount;
+    }
+
+    public void setTotalAmount(String totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public String getPaymentMode() {
+        return this.paymentMode;
+    }
+
+    public void setPaymentMode(String paymentMode) {
+        this.paymentMode = paymentMode;
+    }
+
+    public String getShippingAddress() {
+        return this.shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
 }
