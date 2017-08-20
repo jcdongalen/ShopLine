@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/md_white_1000"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/md_grey_500"/>
+        android:layout_height="20dp"
+        android:background="@color/md_grey_300"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,16 +67,29 @@
             android:layout_weight="1">
 
             <com.pinas.xburner.shopline.Custom.mTextView
-                android:id="@+id/tvProductName"
+                android:id="@+id/tvOrderID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:singleLine="true"
                 android:maxLines="1"
                 android:ems="1"
                 android:textColor="@color/md_black_1000"
-                android:text="Product's name and description."
+                android:text="ID001728-121455"
                 app:setFont="caviar_dreams_bold"/>
+
+            <com.pinas.xburner.shopline.Custom.mTextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:ems="1"
+                android:textColor="@color/md_grey_800"
+                android:text="Product's name and description."
+                app:setFont="caviar_dreams_bold"
+                android:layout_below="@+id/tvOrderID"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"

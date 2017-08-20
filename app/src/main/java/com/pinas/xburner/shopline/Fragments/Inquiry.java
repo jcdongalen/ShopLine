@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.pinas.xburner.shopline.Activity.AddInquiry;
 import com.pinas.xburner.shopline.Adapter.InquiryAdapter;
+import com.pinas.xburner.shopline.Functions.GlobalFunctions;
 import com.pinas.xburner.shopline.Model.Order;
 import com.pinas.xburner.shopline.R;
 
@@ -61,18 +62,16 @@ public class Inquiry extends Fragment implements View.OnClickListener {
         fabInquiry = (FloatingActionButton) rootView.findViewById(R.id.fabInquiry);
         fabInquiry.setOnClickListener(this);
 
-        try{
+        try {
             rvInquiry = (RecyclerView) rootView.findViewById(R.id.rvInquiry);
             inquiryAdapter = new InquiryAdapter(inquiries);
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
             rvInquiry.setLayoutManager(mLayoutManager);
             rvInquiry.setItemAnimator(new DefaultItemAnimator());
             rvInquiry.setAdapter(inquiryAdapter);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         try {
@@ -81,7 +80,6 @@ public class Inquiry extends Fragment implements View.OnClickListener {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     try{
-                        String value = dataSnapshot.getValue().toString();
                         Order order = dataSnapshot.getValue(Order.class);
                         if (order != null) {
                             inquiries.add(order);
@@ -118,6 +116,18 @@ public class Inquiry extends Fragment implements View.OnClickListener {
             e.printStackTrace();
         }
 
+    }
+
+    public void addOrders(){
+        Order order1 = new Order(new GlobalFunctions().getOrderID(), "John Carlos Dongalen", "Macarang, Mangatarem, Pangasonan", "Cash on Delivery", "11,999.00", "SP:Vivo 5 Plus:11999", "1");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Order order2 = new Order(new GlobalFunctions().getOrderID(), "John Carlos Dongalen", "Macarang, Mangatarem, Pangasonan", "Cash on Delivery", "399.00", "SP:Fish Eye:399", "1");
+        inquiries.add(order1);
+        inquiries.add(order2);
     }
 
     @Override
