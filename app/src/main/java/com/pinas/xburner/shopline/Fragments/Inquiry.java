@@ -40,7 +40,7 @@ public class Inquiry extends Fragment implements View.OnClickListener {
     RecyclerView rvInquiry;
     private DatabaseReference mDatabase;
 
-    List<Order> inquiries = new ArrayList<>();
+    ArrayList<Order> inquiries = new ArrayList<>();
     InquiryAdapter inquiryAdapter;
 
     public Inquiry() {
@@ -64,8 +64,9 @@ public class Inquiry extends Fragment implements View.OnClickListener {
 
         try {
             rvInquiry = (RecyclerView) rootView.findViewById(R.id.rvInquiry);
-            inquiryAdapter = new InquiryAdapter(inquiries);
-            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+            inquiryAdapter = new InquiryAdapter(getActivity(), inquiries);
+            LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+            mLayoutManager.setReverseLayout(true);
             rvInquiry.setLayoutManager(mLayoutManager);
             rvInquiry.setItemAnimator(new DefaultItemAnimator());
             rvInquiry.setAdapter(inquiryAdapter);
@@ -89,6 +90,7 @@ public class Inquiry extends Fragment implements View.OnClickListener {
                     catch (Exception e){
                         e.printStackTrace();
                     }
+                    rvInquiry.smoothScrollToPosition(inquiries.size() - 1);
                 }
 
                 @Override
@@ -116,18 +118,6 @@ public class Inquiry extends Fragment implements View.OnClickListener {
             e.printStackTrace();
         }
 
-    }
-
-    public void addOrders(){
-        Order order1 = new Order(new GlobalFunctions().getOrderID(), "John Carlos Dongalen", "Macarang, Mangatarem, Pangasonan", "Cash on Delivery", "11,999.00", "SP:Vivo 5 Plus:11999", "1");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Order order2 = new Order(new GlobalFunctions().getOrderID(), "John Carlos Dongalen", "Macarang, Mangatarem, Pangasonan", "Cash on Delivery", "399.00", "SP:Fish Eye:399", "1");
-        inquiries.add(order1);
-        inquiries.add(order2);
     }
 
     @Override

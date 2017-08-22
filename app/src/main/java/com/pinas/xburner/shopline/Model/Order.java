@@ -1,6 +1,9 @@
 package com.pinas.xburner.shopline.Model;
 
+import com.google.android.gms.analytics.ecommerce.Product;
 import com.google.firebase.database.IgnoreExtraProperties;
+
+import java.util.ArrayList;
 
 /**
  * Created by john_dongalen on 8/15/2017.
@@ -20,18 +23,18 @@ public class Order {
     private String totalAmount;
     private String paymentMode;
     private String shippingAddress;
+    private ArrayList<Product> products;
 
     public Order() {
     }
 
-    public Order(String OrderID, String FullName, String ShippingAddress, String PaymentMode, String TotalAmount, String Product1, String Product1Count) {
+    public Order(String OrderID, String FullName, String ShippingAddress, String PaymentMode, String TotalAmount, ArrayList<Product> Products) {
         this.orderID = OrderID;
         this.fullName = FullName;
         this.shippingAddress = ShippingAddress;
         this.paymentMode = PaymentMode;
         this.totalAmount = TotalAmount;
-        this.product1 = Product1;
-        this.product1Count = Product1Count;
+        this.products = Products;
     }
 
     public String getOrderID() {
@@ -122,4 +125,11 @@ public class Order {
         this.shippingAddress = shippingAddress;
     }
 
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
 }

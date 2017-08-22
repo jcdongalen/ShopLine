@@ -167,17 +167,33 @@
                         android:layout_weight="5"
                         android:orientation="horizontal">
 
-                        <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
-                            android:id="@+id/mACTProduct1"
+                        <RelativeLayout
                             android:layout_width="0dp"
-                            android:layout_height="45dp"
-                            android:layout_weight="4"
-                            android:completionThreshold="2"
-                            android:hint="Product 1"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:textSize="12sp"
-                            app:setFont="caviar_dreams_bold" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="4">
+
+                            <com.pinas.xburner.shopline.Custom.mAutoCompleteTextView
+                                android:id="@+id/mACTProduct1"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:completionThreshold="2"
+                                android:hint="Product 1"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textSize="12sp"
+                                app:setFont="caviar_dreams_bold" />
+
+                            <ImageButton
+                                android:id="@+id/imgRemove"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/ic_menu_delete"
+                                android:background="@android:color/transparent"
+                                android:layout_margin="5dp"
+                                android:tint="@color/colorPrimaryDark"
+                                android:layout_alignParentEnd="true"/>
+
+                        </RelativeLayout>
 
                         <com.pinas.xburner.shopline.Custom.mEditText
                             android:id="@+id/etCount1"
