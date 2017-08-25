@@ -42,7 +42,7 @@ public class AddInquiry extends AppCompatActivity implements View.OnClickListene
     DatabaseReference mDatabaseReference;
     FirebaseDatabase mFirebaseDatabase;
     ArrayList<Products> supplies = new ArrayList<>();
-    Products product1;
+    ArrayList<Products> cart = new ArrayList<>();
     private DecimalFormat formatter;
 
     private String OrderID;
@@ -80,7 +80,7 @@ public class AddInquiry extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 mACTProduct1.setText(productAdapter.suggestions.get(position).getName());
-                product1 = productAdapter.suggestions.get(position);
+                cart.add(productAdapter.suggestions.get(position));
                 etCount1.setEnabled(true);
                 mACTProduct1.setEnabled(false);
             }
@@ -100,10 +100,10 @@ public class AddInquiry extends AppCompatActivity implements View.OnClickListene
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (product1 != null && mACTProduct1.getText().toString().length() > 5) {
-                    product1.setStock(etCount1.getText().toString());
-                    Double amount = Double.parseDouble(product1.getAmount()) * Double.parseDouble(product1.getStock());
-                    product1.setTotalamount(String.valueOf(amount));
+                if (cart.get(0) != null && mACTProduct1.getText().toString().length() > 5) {
+                    cart.get(0).setStock(etCount1.getText().toString());
+                    Double amount = Double.parseDouble(cart.get(0).getAmount()) * Double.parseDouble(cart.get(0).getStock());
+                    cart.get(0).setTotalamount(String.valueOf(amount));
                     tvAmount.setText(formatter.format(amount));
                 }
                 else{
@@ -139,17 +139,19 @@ public class AddInquiry extends AppCompatActivity implements View.OnClickListene
         switch (view.getId()) {
             case R.id.btnPlaceOrder:
                 try {
-//                    OrderID = etOrderID.getText().toString();
-//                    Order order = new Order(OrderID, etFullName.getText().toString(), etAddress.getText().toString(), mAutoCompletePaymentMode.getText().toString(), tvAmount.getText().toString(), mACTProduct1.getText().toString(), etCount1.getText().toString());
-//
-//                    mDatabaseReference.child(OrderID).setValue(order);
-//                    addOrderChangeListerner();
+                    if(cart.size() > 0){
+                        OrderID = etOrderID.getText().toString();
+                        Order order = new Order(OrderID, etFullName.getText().toString(), etAddress.getText().toString(), mAutoCompletePaymentMode.getText().toString(), tvAmount.getText().toString(), cart);
+
+                        mDatabaseReference.child(OrderID).setValue(order);
+                        addOrderChangeListerner();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 break;
             case R.id.imgRemove:
-                product1 = null;
+                cart.clear();
                 etCount1.setEnabled(false);
                 mACTProduct1.setText("");
                 mACTProduct1.setEnabled(true);

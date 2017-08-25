@@ -56,7 +56,7 @@
                     android:paddingRight="10dp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
-                    app:setFont="comfortaa_light" />
+                    app:setFont="caviar_dreams_bold" />
 
                 <com.pinas.xburner.shopline.Custom.mEditText
                     android:id="@+id/etPassword"
@@ -69,7 +69,7 @@
                     android:paddingRight="10dp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
-                    app:setFont="comfortaa_light" />
+                    app:setFont="caviar_dreams_bold" />
 
                 <com.pinas.xburner.shopline.Custom.mButton
                     android:id="@+id/btnLogin"
@@ -93,7 +93,7 @@
                     android:layout_margin="5dp"
                     android:text="Or"
                     android:textColor="@color/colorPrimary"
-                    app:setFont="comfortaa_bold" />
+                    app:setFont="caviar_dreams_bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                         android:textAllCaps="false"
                         android:textColor="#FFF"
                         android:textStyle="bold"
-                        app:setFont="comfortaa_bold" />
+                        app:setFont="caviar_dreams_bold" />
 
                     <com.pinas.xburner.shopline.Custom.mButton
                         android:id="@+id/btnFacebook"
@@ -132,7 +132,7 @@
                         android:textAllCaps="false"
                         android:textColor="#FFF"
                         android:textStyle="bold"
-                        app:setFont="comfortaa_bold" />
+                        app:setFont="caviar_dreams_bold" />
 
                 </LinearLayout>
 
@@ -149,7 +149,7 @@
                         android:text="Dont have an account?  "
                         android:textColor="@color/colorPrimary"
                         android:textSize="12sp"
-                        app:setFont="comfortaa_bold" />
+                        app:setFont="caviar_dreams_bold" />
 
                     <com.pinas.xburner.shopline.Custom.mTextView
                         android:id="@+id/tvSignUp"

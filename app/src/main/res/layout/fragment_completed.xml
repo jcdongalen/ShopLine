@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_grey_100"
     tools:context="com.pinas.xburner.shopline.Fragments.Completed">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvCompleted"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="This fragment is for completed transactions with the customers." />
+        android:scrollbars="vertical" />
 
 </FrameLayout>

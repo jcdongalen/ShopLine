@@ -19,11 +19,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.Login"
-            android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.MainActivityCustomer" />
-        <activity android:name=".Activity.Registration" />
-        <activity android:name=".Activity.AddInquiry"></activity>
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Activity.MainActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Activity.MainActivityCustomer"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Activity.Registration"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Activity.AddInquiry"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

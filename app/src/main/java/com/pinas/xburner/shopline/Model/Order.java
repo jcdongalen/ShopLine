@@ -14,21 +14,16 @@ public class Order {
 
     private String orderID;
     private String fullName;
-    private String product1;
-    private String product1Count;
-    private String product2;
-    private String product2Count;
-    private String product3;
-    private String product3Count;
     private String totalAmount;
-    private String paymentMode;
-    private String shippingAddress;
-    private ArrayList<Product> products;
+    private String paymentMode = "";
+    private String shippingAddress = "";
+    private ArrayList<Products> products;
+    private String status = "";
 
     public Order() {
     }
 
-    public Order(String OrderID, String FullName, String ShippingAddress, String PaymentMode, String TotalAmount, ArrayList<Product> Products) {
+    public Order(String OrderID, String FullName, String ShippingAddress, String PaymentMode, String TotalAmount, ArrayList<Products> Products) {
         this.orderID = OrderID;
         this.fullName = FullName;
         this.shippingAddress = ShippingAddress;
@@ -51,54 +46,6 @@ public class Order {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getProduct1() {
-        return this.product1;
-    }
-
-    public void setProduct1(String product1) {
-        this.product1 = product1;
-    }
-
-    public String getProduct1Count() {
-        return this.product1Count;
-    }
-
-    public void setProduct1Count(String product1Count) {
-        this.product1Count = product1Count;
-    }
-
-    public String getProduct2() {
-        return this.product2;
-    }
-
-    public void setProduct2(String product2) {
-        this.product2 = product2;
-    }
-
-    public String getProduct2Count() {
-        return this.product2Count;
-    }
-
-    public void setProduct2Count(String product2Count) {
-        this.product2Count = product2Count;
-    }
-
-    public String getProduct3() {
-        return this.product3;
-    }
-
-    public void setProduct3(String product3) {
-        this.product3 = product3;
-    }
-
-    public String getProduct3Count() {
-        return this.product3Count;
-    }
-
-    public void setProduct3Count(String product3Count) {
-        this.product3Count = product3Count;
     }
 
     public String getTotalAmount() {
@@ -125,11 +72,19 @@ public class Order {
         this.shippingAddress = shippingAddress;
     }
 
-    public ArrayList<Product> getProducts() {
+    public ArrayList<Products> getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products) {
+    public void setProducts(ArrayList<Products> products) {
         this.products = products;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

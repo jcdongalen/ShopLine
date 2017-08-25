@@ -25,23 +25,22 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by john_dongalen on 8/18/2017.
+ * Created by john_dongalen on 8/25/2017.
  */
 
-public class InquiryAdapter extends RecyclerView.Adapter<InquiryAdapter.InquiryViewHolder> {
-
-    private List<Order> inquiries;
+public class CompletedAdapter extends RecyclerView.Adapter<CompletedAdapter.CompletedViewHolder> {
+    private List<Order> completed;
     private Context mContext;
     private DecimalFormat formatter;
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase mFirebaseDatabase;
 
-    public class InquiryViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvOrderID, tvPrice, tvCount, tvTotalAmount, tvProductName, tvFullName, tvMore;
+    public class CompletedViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvOrderID, tvPrice, tvCount, tvTotalAmount, tvProductName, tvFullName, tvMore, tvItemCategory;
         public ImageView imgLogo;
         public Button btnConfirm;
 
-        public InquiryViewHolder(View view) {
+        public CompletedViewHolder(View view) {
             super(view);
             tvOrderID = (TextView) view.findViewById(R.id.tvOrderID);
             tvPrice = (TextView) view.findViewById(R.id.tvPrice);
@@ -52,11 +51,12 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryAdapter.InquiryV
             imgLogo = (ImageView) view.findViewById(R.id.imgLogo);
             btnConfirm = (Button) view.findViewById(R.id.btnConfirm);
             tvMore = (TextView) view.findViewById(R.id.tvMore);
+            tvItemCategory = (TextView)view.findViewById(R.id.tvItemCategory);
         }
     }
 
-    public InquiryAdapter(Context context, List<Order> inquiries) {
-        this.inquiries = inquiries;
+    public CompletedAdapter(Context context, List<Order> completed) {
+        this.completed = completed;
         this.mContext = context;
         this.formatter = new DecimalFormat("###,###,###.00");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -64,16 +64,16 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryAdapter.InquiryV
     }
 
     @Override
-    public InquiryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CompletedAdapter.CompletedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_item_inquiry, parent, false);
 
-        return new InquiryViewHolder(itemView);
+        return new CompletedAdapter.CompletedViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(InquiryViewHolder holder, int position) {
-        final Order order = inquiries.get(position);
+    public void onBindViewHolder(CompletedAdapter.CompletedViewHolder holder, int position) {
+        final Order order = completed.get(position);
 
         if (order.getProducts().size() > 1) {
             holder.tvMore.setVisibility(View.VISIBLE);
@@ -81,6 +81,7 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryAdapter.InquiryV
             holder.tvMore.setVisibility(View.GONE);
         }
 
+        holder.tvItemCategory.setText("Paid");
         holder.tvOrderID.setText(order.getOrderID());
         holder.tvFullName.setText(order.getFullName());
         holder.tvProductName.setText(order.getProducts().get(0).getName());
@@ -99,35 +100,29 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryAdapter.InquiryV
             }
         });
 
+        holder.btnConfirm.setText("Complete");
+        holder.btnConfirm.setVisibility(View.GONE);
         holder.btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(mContext)
-                        .setTitle("Shipment Status")
-                        .setMessage("Choose the status of these specific order.")
-                        .setPositiveButton("For Shipment", new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(mContext, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                        .setTitle("SHOPLINE")
+                        .setMessage("Are you sure?")
+                        .setPositiveButton("Yup!", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                order.setStatus("To be shipped to: " + order.getFullName() + "\nAddress: " + order.getShippingAddress() + " - as of " + new SimpleDateFormat("HH:mm a, MMM dd, yyyy.").format(new Date()));
+                                order.setStatus("Verified by: " + order.getFullName() + "\nAddress: " + order.getShippingAddress() + " - as of " + new SimpleDateFormat("HH:mm a, MMM dd, yyyy.").format(new Date()));
                                 mDatabaseReference.child(order.getOrderID()).setValue(order);
                             }
                         })
-                        .setNegativeButton("Shipped", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                order.setStatus("Shipped to: " + order.getFullName() + "\nAddress: " + order.getShippingAddress() + " - as of " + new SimpleDateFormat("HH:mm a, MMM dd, yyyy.").format(new Date()));
-                                mDatabaseReference.child(order.getOrderID()).setValue(order);
-                            }
-                        })
-                        .setNeutralButton("Exit", null)
+                        .setNegativeButton("Wait", null)
                         .show();
-                //Toast.makeText(mContext, "This will be the listener for button confirm.", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return inquiries.size();
+        return completed.size();
     }
 }

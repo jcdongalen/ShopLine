@@ -38,7 +38,7 @@ public class Inquiry extends Fragment implements View.OnClickListener {
     FloatingActionButton fabInquiry;
     View rootView;
     RecyclerView rvInquiry;
-    private DatabaseReference mDatabase;
+    DatabaseReference mDatabase;
 
     ArrayList<Order> inquiries = new ArrayList<>();
     InquiryAdapter inquiryAdapter;
@@ -53,7 +53,7 @@ public class Inquiry extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_inquiry, container, false);
-
+        inquiries.clear();
         initialization();
         return rootView;
     }
@@ -67,6 +67,7 @@ public class Inquiry extends Fragment implements View.OnClickListener {
             inquiryAdapter = new InquiryAdapter(getActivity(), inquiries);
             LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
             mLayoutManager.setReverseLayout(true);
+            mLayoutManager.setStackFromEnd(true);
             rvInquiry.setLayoutManager(mLayoutManager);
             rvInquiry.setItemAnimator(new DefaultItemAnimator());
             rvInquiry.setAdapter(inquiryAdapter);
@@ -80,23 +81,37 @@ public class Inquiry extends Fragment implements View.OnClickListener {
             InquiryList.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    try{
+                    try {
                         Order order = dataSnapshot.getValue(Order.class);
-                        if (order != null) {
+                        if (order != null && order.getStatus().equalsIgnoreCase("")) {
                             inquiries.add(order);
                             inquiryAdapter.notifyDataSetChanged();
                         }
-                    }
-                    catch (Exception e){
+                        rvInquiry.smoothScrollToPosition(inquiries.size() - 1);
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    rvInquiry.smoothScrollToPosition(inquiries.size() - 1);
                 }
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    String OrderID = dataSnapshot.getKey();
                     Order order = dataSnapshot.getValue(Order.class);
+                    if (order != null) {
+                        if (!order.getStatus().equalsIgnoreCase("")) {
+                            for (int i = 0; i < inquiries.size(); i++) {
+                                if (inquiries.get(i).getOrderID().equalsIgnoreCase(order.getOrderID())) {
+                                    inquiries.remove(i);
+                                }
+                            }
+                        } else {
+                            for (int i = 0; i < inquiries.size(); i++) {
+                                if (inquiries.get(i).getOrderID().equalsIgnoreCase(order.getOrderID())) {
+                                    inquiries.set(i, order);
+                                }
+                            }
+                        }
+                        inquiryAdapter.notifyDataSetChanged();
+                    }
                 }
 
                 @Override
