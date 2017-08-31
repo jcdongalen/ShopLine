@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
-        android:background="@color/md_black_1000"
+        android:background="#111111"
         tools:context="com.pinas.xburner.shopline.Activity.Login">
 
         <ImageView
@@ -51,7 +51,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp">
+                    android:layout_height="45dp"
+                    android:textColorHint="@color/md_blue_900">
 
                     <com.pinas.xburner.shopline.Custom.mEditText
                         android:id="@+id/etUserName"
@@ -66,7 +67,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp">
+                    android:layout_height="45dp"
+                    android:textColorHint="@color/md_blue_900">
 
                     <com.pinas.xburner.shopline.Custom.mEditText
                         android:id="@+id/etPassword"
@@ -74,6 +76,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:textColor="@color/colorPrimary"
+                        android:inputType="textWebPassword"
                         android:textSize="14sp"
                         app:setFont="caviar_dreams_bold" />
 
