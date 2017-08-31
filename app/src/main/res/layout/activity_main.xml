@@ -34,12 +34,17 @@
                     android:clickable="true"
                     android:tint="#FFFFFF"/>
 
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/app_logo"/>
+
                 <com.pinas.xburner.shopline.Custom.mTextView
                     android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="STORACCO"
+                    android:text="TORACCO"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     app:setFont="caviar_dreams_bold" />
@@ -63,7 +68,7 @@
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 app:tabBackground="@drawable/tab_background_selector"
                 app:tabMode="fixed" />
 

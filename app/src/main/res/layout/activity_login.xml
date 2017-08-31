@@ -46,8 +46,14 @@
                     android:textSize="26sp"
                     android:textColor="@color/colorPrimary"
                     android:layout_gravity="center"
-                    android:text="STORACCO"
-                    app:setFont="black_chancery"/>
+                    android:text="@string/app_name"
+                    app:setFont="caviar_dreams_bold"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Testing"
+                    android:fontFamily="@android:font/"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -89,8 +95,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="bottom"
-                        android:text="Forgot Password?  "
-                        android:textColor="@color/colorPrimary"
+                        android:text="Forgot Password?"
+                        android:textColor="@color/md_blue_900"
                         android:textSize="12sp"
                         app:setFont="caviar_dreams_bold" />
 
@@ -110,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:text="Sign Me Up! "
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/md_blue_900"
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:setFont="caviar_dreams_bold" />
